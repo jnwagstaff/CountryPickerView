@@ -23,7 +23,7 @@ public struct Country: Equatable {
     }
     public var flag: UIImage {
         return UIImage(named: "CountryPickerView.bundle/Images/\(code.uppercased())",
-            in: Bundle(for: CountryPickerView.self), compatibleWith: nil)!
+                       in: Bundle.module, compatibleWith: nil)!
     }
 }
 
