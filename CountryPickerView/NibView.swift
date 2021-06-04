@@ -32,7 +32,7 @@ public class NibView: UIView {
     
     fileprivate func loadViewFromNib() -> UIView {
         let selfName = String(describing: type(of: self))
-        let podBundle = Bundle(for: type(of: self))
+        let podBundle = Bundle.module
         let nibBundleURL = podBundle.url(forResource: selfName, withExtension: "bundle")!
         var nibBundle = Bundle(url: nibBundleURL)
         // The framework crashes if installed via Carthage because the nib
