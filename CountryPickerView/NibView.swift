@@ -32,16 +32,7 @@ public class NibView: UIView {
     
     fileprivate func loadViewFromNib() -> UIView {
         let selfName = String(describing: type(of: self))
-        let podBundle = Bundle.module
-        let nibBundleURL = podBundle.url(forResource: selfName, withExtension: "bundle")!
-        var nibBundle = Bundle(url: nibBundleURL)
-        // The framework crashes if installed via Carthage because the nib
-        // file does not exist in the nibBundle but rather in the podBundle.
-        // This is a workaround.
-        if nibBundle?.url(forResource: selfName, withExtension: "nib") == nil {
-            nibBundle = podBundle
-        }
-        let nib = UINib(nibName: selfName, bundle: nibBundle)
+        let nib = UINib(nibName: selfName, bundle: Bundle.module)
         let nibView = nib.instantiate(withOwner: self, options: nil).first as! UIView
         return nibView
     }
