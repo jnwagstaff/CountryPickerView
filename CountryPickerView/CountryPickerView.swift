@@ -171,7 +171,7 @@ public class CountryPickerView: NibView {
     
     public let countries: [Country] = {
         var countries = [Country]()
-        let bundle = Bundle(for: CountryPickerView.self)
+        let bundle = Bundle.module
         guard let jsonPath = bundle.path(forResource: "CountryPickerView.bundle/Data/CountryCodes", ofType: "json"),
             let jsonData = try? Data(contentsOf: URL(fileURLWithPath: jsonPath)) else {
                 return countries

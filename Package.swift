@@ -14,7 +14,8 @@ let package = Package(
             name: "CountryPickerView",
             path: "CountryPickerView",
             resources: [
-                .process("CountryPickerView.xib")
+                .process("CountryPickerView.xib"),
+                .process("Assets/CountryPickerView.bundle")
             ]
         )
     ]
